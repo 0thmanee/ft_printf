@@ -1,28 +1,34 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_printf.h                                        :+:      :+:    :+:   */
+/*   ft_prints.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: obouchta <obouchta@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/11/13 20:03:41 by obouchta          #+#    #+#             */
-/*   Updated: 2023/11/13 22:44:42 by obouchta         ###   ########.fr       */
+/*   Created: 2023/11/13 22:37:54 by obouchta          #+#    #+#             */
+/*   Updated: 2023/11/13 22:39:26 by obouchta         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef FT_PRINTF_H
-# define FT_PRINTF_H
+#include "ft_printf.h"
 
-# include <unistd.h>
-# include <stdlib.h>
-# include <stdio.h>
-# include <string.h>
-# include <stdarg.h>
+int	ft_prints(char *s)
+{
+	int	i;
+	int	j;
+	int	bytes;
 
-int		ft_printf(char	*str, ...);
-int		ft_format(va_list args, char c);
-int		ft_printc(char c);
-int		ft_prints(char *s);
-int		ft_printd(int d);
-
-#endif
+	i = 0;
+	j = 0;
+	bytes = 0;
+	while (s[i])
+	{
+		j = ft_printc(s[i]);
+		if (j != -1)
+			bytes += j;
+		else
+			return (-1);
+		i++;
+	}
+	return (bytes);
+}

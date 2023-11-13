@@ -8,7 +8,7 @@ AR = ar rc
 
 RM = rm -f
 
-FILES =
+FILES = ft_printf.c ft_printc.c ft_prints.c ft_printd.c
 
 OBJS = $(FILES:.c=.o)
 
