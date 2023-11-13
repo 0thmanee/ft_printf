@@ -6,8 +6,8 @@
       "type": "lldb",
       "request": "launch",
       "args": [],
-      "cwd": "/Users/obouchta/Desktop/ft_printf",
-      "program": "/Users/obouchta/Desktop/ft_printf/build/Debug/outDebug"
+      "cwd": "/Users/obouchta/Desktop/ft_printf/ft_printf",
+      "program": "/Users/obouchta/Desktop/ft_printf/ft_printf/build/Debug/outDebug"
     }
   ]
 }
