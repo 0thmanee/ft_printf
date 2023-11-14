@@ -1,7 +1,10 @@
+#include "ft_printf.h"
+
 int main()
 {
 	char c = 'd';
 	char *str = "Hello";
-	printf(" %d \n", ft_printf("%c, %s", c, str));
-	printf(" %d ", printf("%c, %s", c, str));
+	int x = -2183648;
+	printf(" %d \n", ft_printf("%d",x));
+	printf(" %d ", printf("%d",x));
 }

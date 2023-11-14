@@ -6,7 +6,7 @@
 /*   By: obouchta <obouchta@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/13 22:37:54 by obouchta          #+#    #+#             */
-/*   Updated: 2023/11/13 22:39:26 by obouchta         ###   ########.fr       */
+/*   Updated: 2023/11/14 10:20:26 by obouchta         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,21 +14,29 @@
 
 int	ft_prints(char *s)
 {
-	int	i;
 	int	j;
 	int	bytes;
 
-	i = 0;
-	j = 0;
 	bytes = 0;
-	while (s[i])
+	if (s == NULL)
 	{
-		j = ft_printc(s[i]);
+		j = write(1, "(null)", 6);
 		if (j != -1)
 			bytes += j;
 		else
 			return (-1);
-		i++;
+	}
+	else
+	{
+		while (*s)
+		{
+			j = ft_printc(*s);
+			if (j != -1)
+				bytes += j;
+			else
+				return (-1);
+			s++;
+		}
 	}
 	return (bytes);
 }

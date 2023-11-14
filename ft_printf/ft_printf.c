@@ -6,7 +6,7 @@
 /*   By: obouchta <obouchta@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/13 19:52:28 by obouchta          #+#    #+#             */
-/*   Updated: 2023/11/13 23:34:23 by obouchta         ###   ########.fr       */
+/*   Updated: 2023/11/14 09:59:26 by obouchta         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,12 +20,12 @@ int	ft_format(va_list args, char c)
 	j = 0;
 	bytes = 0;
 	if (c == '%')
-		ft_printc(c);
+		j = ft_printc(c);
 	else if (c == 'c')
 		j = ft_printc(va_arg(args, int));
 	else if (c == 's')
 		j = ft_prints(va_arg(args, char*));
-	else if (c == 'd')
+	else if (c == 'd' || c == 'i')
 		j = ft_printd(va_arg(args, int));
 	if (j != -1)
 		bytes += j;
@@ -47,7 +47,10 @@ int	ft_printf(char	*str, ...)
 	while (str[i])
 	{
 		if (str[i] == '%')
-			j = ft_format(args, str[++i]);
+		{
+			if (str[i + 1])
+				j = ft_format(args, str[++i]);
+		}
 		else
 			j = ft_printc(str[i]);
 		if (j != -1)
