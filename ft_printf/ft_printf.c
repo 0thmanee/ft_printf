@@ -6,7 +6,7 @@
 /*   By: obouchta <obouchta@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/13 19:52:28 by obouchta          #+#    #+#             */
-/*   Updated: 2023/11/13 22:39:14 by obouchta         ###   ########.fr       */
+/*   Updated: 2023/11/13 23:34:23 by obouchta         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -57,12 +57,4 @@ int	ft_printf(char	*str, ...)
 		i++;
 	}
 	return (bytes);
-}
-
-int main()
-{
-	char c = 'd';
-	char *str = "Hello";
-	printf(" %d \n", ft_printf("%c, %s", c, str));
-	printf(" %d ", printf("%c, %s", c, str));
 }
