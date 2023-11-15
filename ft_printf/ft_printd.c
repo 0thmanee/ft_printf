@@ -6,7 +6,7 @@
 /*   By: obouchta <obouchta@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/13 22:37:49 by obouchta          #+#    #+#             */
-/*   Updated: 2023/11/14 12:45:18 by obouchta         ###   ########.fr       */
+/*   Updated: 2023/11/14 22:36:23 by obouchta         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,7 @@ static int	ft_putnbr(int d)
 {
 	int	bytes;
 	int	j;
-	
+
 	bytes = 0;
 	if (d >= 10)
 	{
@@ -26,8 +26,7 @@ static int	ft_putnbr(int d)
 		else
 			return (-1);
 	}
-	char c = (d % 10) + '0';
-	j = ft_printc(c);
+	j = ft_printc((d % 10) + '0');
 	if (j != -1)
 		bytes += j;
 	else
@@ -62,7 +61,7 @@ int	ft_printd(int d)
 {
 	int		bytes;
 	int		j;
-	
+
 	bytes = 0;
 	if (d == -2147483648)
 	{
@@ -79,5 +78,3 @@ int	ft_printd(int d)
 		return (-1);
 	return (bytes);
 }
-
-

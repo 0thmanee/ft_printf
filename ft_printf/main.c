@@ -4,7 +4,7 @@ int main()
 {
 	char c = 'd';
 	char *str = "Hello";
-	int x = 3411124;
-	printf(" %d \n", ft_printf("%d",x));
-	printf(" %d ", printf("%d",x));
+	int x = -2147483647;
+	printf(" %d \n", ft_printf("0diqsfei%wvb%p",&x));
+	printf(" %d ", printf("0diqsfei%wvb%p",&x));
 }
