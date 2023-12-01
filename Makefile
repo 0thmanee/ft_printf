@@ -18,11 +18,11 @@ all: $(NAME)
 $(NAME): $(OBJS)
 	$(AR) $@ $^
 
-%.o: %.c libft.h
+%.o: %.c ft_printf.h
 	$(CC) $(CFLAGS) -c $< -o $@
 
 clean:
-	$(RM) $(OBJS) $(OBJSB)
+	$(RM) $(OBJS)
 
 fclean: clean
 	$(RM) $(NAME)
